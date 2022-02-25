@@ -1,0 +1,52 @@
+@use "include/mixins/flex"
+main.store  article.marketplace
+    @include flex.flex-stretch-col(false, $wrap: nowrap)
+    position: relative
+    width: 100vw
+    background: white
+
+    h1
+        color: white
+        margin: auto 0
+        background: black
+        vertical-align: middle
+        padding: 1vw
+        
+        font-size: xx-large
+        text-decoration: underline
+
+    section.purchasable
+        color: black
+        background: white
+        @include flex.flex-row($wrap: wrap)
+        justify-content: flex-start
+        gap: 1rem
+        margin: 1rem
+
+        div.beer
+            border: 1px solid black
+            padding: 1em
+            max-width: 600px
+            min-width: 400px
+            .img
+            .title
+            .description
+            .stats
+            .price
+            .quantity
+            .weight
+            .alt
+            
+        div.cart
+            @include flex.flex-center-row
+            position: fixed
+            right: 3rem
+            bottom: 3rem
+            line-height: 1
+            height: 2rem
+            width: 2rem
+            font-size: 1rem
+            border: 0px solid black
+            background: hsla(90deg, 10%, 10%, 50%)
+            border-radius: 1rem
+            transform: scale(3)

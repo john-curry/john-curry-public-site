@@ -1,0 +1,49 @@
+.goto-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  right: 2em;
+  bottom: 2em;
+  background-color: rgba(211, 211, 211, 0.5);
+  border-radius: 4ch;
+  border-color: rgba(111, 111, 111, 0.5);
+  border-width: 1px;
+  border-style: solid;
+  color: black;
+  text-decoration: none;
+  width: 8ch;
+  height: 8ch;
+}
+
+.goto-top:hover {
+  border-color: darkorange;
+  cursor: pointer;
+  color: darkorange;
+}
+
+.goto-top:visited {
+  color: black;
+}
+
+.goto-top:focus {
+  color: black;
+}
+
+.goto-top:before {
+  display: block;
+  content: '<<<';
+  margin: auto 0;
+  font-size: large;
+  font-family: monospace;
+  -webkit-transform: scaleX(2) rotate(90deg);
+          transform: scaleX(2) rotate(90deg);
+}
+/*# sourceMappingURL=main.css.map */

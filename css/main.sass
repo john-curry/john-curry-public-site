@@ -1,0 +1,32 @@
+.goto-top
+    display: flex
+    position: fixed
+    justify-content: center
+    flex-flow: row nowrap
+    right: 2em
+    bottom: 2em
+    background-color: rgba(211, 211, 211, 0.5)
+    border-radius: 4ch
+    border-color: rgba(111, 111, 111, 0.5)
+    border-width: 1px
+    border-style: solid
+    color: black
+    text-decoration: none
+    width: 8ch
+    height: 8ch
+    &:hover
+        border-color: darkorange
+        cursor: pointer
+        color: darkorange
+    &:visited
+        color: black
+    &:focus
+        color: black
+    &:before
+        display: block
+        content: '<<<'
+        margin: auto 0
+        font-size: large
+        font-family: monospace
+        transform: scaleX(2.0) rotate(90deg)
+

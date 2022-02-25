@@ -1,0 +1,32 @@
+@use 'include/mixins/flex'
+
+$p-small: var(--p-small)
+$p-med: var(--p-med)
+$p-big: var(--p-big)
+$m-small: var(--m-small)
+$m-med: var(--m-med)
+$m-big: var(--m-big)
+$background: var(--color-background)
+$color: white
+$size: calc(2*var(--nav-size))
+$btn-background: darkorange
+$btn-color: $background 
+
+header
+    position: sticky
+    position: -webkit-sticky
+    top: 0
+    z-index: 100
+
+header nav
+    @include flex.flex-center-row
+    background: black
+
+    a
+        display: block
+        font-weight: 300
+        color: white
+        padding: 0px 1rem
+
+        @media (min-width: 768px)
+            padding: $p-big

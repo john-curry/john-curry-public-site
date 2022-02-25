@@ -1,0 +1,28 @@
+header {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header nav {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+header nav a {
+  display: block;
+  font-weight: 300;
+  color: white;
+  padding: 0px 1rem;
+}
+@media (min-width: 768px) {
+  header nav a {
+    padding: var(--p-big);
+  }
+}
+/*# sourceMappingURL=nav.css.map */
