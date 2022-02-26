@@ -139,12 +139,13 @@ const GetApp = (name, splash, page, set) => {
             {GetHeader(name, set)}
             {!!splash ? <Splash /> : ''}
             {page}
-            <footer>KCACP (c) 2021</footer>
             <a href="#Top" className="goto-top"></a>
             <script src="js/main.js"></script>
         </div>
     )
 }
+
+const Footer = (<footer>KCACP (c) 2021</footer>)
 const DropIn = () => {
     return (
                 <section className="lead" id="Lead" data-role="card">
