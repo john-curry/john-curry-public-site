@@ -16,10 +16,11 @@ header
     position: sticky
     position: -webkit-sticky
     top: 0
-    z-index: 100
+    z-index: 101
 
 header nav
-    @include flex.flex-center-row
+    //@include flex.flex-center-row
+    display: block
     background: black
 
     a
@@ -27,6 +28,7 @@ header nav
         font-weight: 300
         color: white
         padding: 0px 1rem
+        text-decoration: underline
 
         @media (min-width: 768px)
             padding: $p-big

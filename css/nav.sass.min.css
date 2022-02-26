@@ -1,0 +1,2 @@
+header{position:sticky;position:-webkit-sticky;top:0;z-index:101}header nav{display:block;background:#000}header nav a{display:block;font-weight:300;color:#fff;padding:0px 1rem;text-decoration:underline}@media(min-width: 768px){header nav a{padding:var(--p-big)}}
+/*# sourceMappingURL=nav.sass.min.css.map */

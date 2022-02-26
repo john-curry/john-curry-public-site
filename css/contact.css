@@ -1,8 +1,8 @@
-.contact header nav {
+.container-about header nav {
   background-color: black;
 }
 
-.contact main {
+.container-about main {
   display: -ms-grid;
   display: grid;
   width: 100vw;
@@ -18,7 +18,7 @@
 }
 
 @media (max-width: 768px) {
-  .contact main {
+  .container-about main {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     -ms-grid-rows: auto;
@@ -27,7 +27,7 @@
   }
 }
 
-.contact main section {
+.container-about main section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,7 +35,7 @@
   font-size: 110%;
 }
 
-.contact main .social-media {
+.container-about main .social-media {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
@@ -51,7 +51,7 @@
           flex-direction: row;
 }
 
-.contact main .social-media [data-icon] {
+.container-about main .social-media [data-icon] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -73,11 +73,11 @@
   background-color: var(--color-background);
 }
 
-.contact main .social-media [data-icon]:not(:last-child) {
+.container-about main .social-media [data-icon]:not(:last-child) {
   border-right: 1px solid white;
 }
 
-.contact main .social-media [data-icon]:hover {
+.container-about main .social-media [data-icon]:hover {
   -ms-flex-negative: 1;
       flex-shrink: 1;
   -webkit-box-flex: 8;
@@ -87,7 +87,7 @@
   text-transform: capitalize;
 }
 
-.contact main .social-media [data-icon]:before {
+.container-about main .social-media [data-icon]:before {
   display: block;
   -ms-flex-item-align: stretch;
       -ms-grid-row-align: stretch;
@@ -98,7 +98,7 @@
           transition-duration: 250ms;
 }
 
-.contact main .social-media [data-icon]:hover:before {
+.container-about main .social-media [data-icon]:hover:before {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
@@ -107,7 +107,7 @@
   margin-left: var(--m-small);
 }
 
-.contact main .location {
+.container-about main .location {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -130,7 +130,7 @@
   font-size: 120%;
 }
 
-.contact main .location:before {
+.container-about main .location:before {
   display: block;
   position: absolute;
   content: attr(data-icon);
@@ -141,7 +141,7 @@
   padding: 0em;
 }
 
-.contact main .details {
+.container-about main .details {
   position: relative;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -163,11 +163,11 @@
   font-size: 140%;
 }
 
-.contact main .details div {
+.container-about main .details div {
   z-index: 3;
 }
 
-.contact main .details:before {
+.container-about main .details:before {
   display: block;
   position: absolute;
   content: attr(data-icon);
@@ -177,7 +177,7 @@
   opacity: 0.5;
 }
 
-.contact main .presentation {
+.container-about main .presentation {
   position: relative;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -198,19 +198,19 @@
   z-index: 0;
 }
 
-.contact main .presentation h5 {
+.container-about main .presentation h5 {
   font-weight: 200;
 }
 
-.contact main .presentation quote {
+.container-about main .presentation quote {
   font-style: italic;
 }
 
-.contact main .presentation p {
+.container-about main .presentation p {
   font-size: 130%;
 }
 
-.contact main .presentation div.shirt {
+.container-about main .presentation div.shirt {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -219,7 +219,7 @@
   padding: 0em;
 }
 
-.contact main .presentation div[role=presentation] {
+.container-about main .presentation div[role=presentation] {
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -235,11 +235,11 @@
   z-index: 2;
 }
 
-.contact main .presentation div[role=presentation] > * {
+.container-about main .presentation div[role=presentation] > * {
   padding-bottom: 1em;
 }
 
-.contact main .phone {
+.container-about main .phone {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -263,7 +263,7 @@
   background: var(--color-background);
 }
 
-.contact main .phone .ringring:before {
+.container-about main .phone .ringring:before {
   display: block;
   content: attr(data-icon);
   color: black;
@@ -279,7 +279,7 @@
           transition-duration: 170ms;
 }
 
-.contact main .phone .ringring:hover:before {
+.container-about main .phone .ringring:hover:before {
   -webkit-filter: hue-rotate(180deg) brightness(100%);
           filter: hue-rotate(180deg) brightness(100%);
   -webkit-transform: scale(1.1) rotate(0deg);
@@ -287,7 +287,7 @@
   cursor: pointer;
 }
 
-.contact main .map {
+.container-about main .map {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -305,7 +305,7 @@
   grid-area: map;
 }
 
-.contact main .map div {
+.container-about main .map div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -315,12 +315,12 @@
           flex-direction: column;
 }
 
-.contact main .map div::before {
+.container-about main .map div::before {
   content: attr(class);
   text-transform: capitalize;
 }
 
-.contact main .map div a {
+.container-about main .map div a {
   text-decoration: none;
   color: white;
   padding: var(--p-small) var(--p-med);

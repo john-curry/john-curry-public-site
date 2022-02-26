@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAC;EACV,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,QAAQ;EACb,IAAI,EAAE,GAAG;EACT,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,GAAG;CAAG",
+    "sources": [
+        "burger.sass"
+    ],
+    "names": [],
+    "file": "burger.css"
+}

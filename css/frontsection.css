@@ -1,0 +1,22 @@
+main.frontpage .article-section {
+  padding-block: 1em;
+}
+
+main.frontpage .article-section .section-header {
+  text-indent: none;
+  font-weight: bold;
+}
+
+main.frontpage .article-section .section-name {
+  font-size: 2em;
+}
+
+main.frontpage .article-section .section-location {
+  padding-block: 1em;
+}
+
+main.frontpage .article-section .section-text {
+  line-height: 1.6;
+  font-size: 1.3em;
+}
+/*# sourceMappingURL=frontsection.css.map */

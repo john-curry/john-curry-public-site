@@ -147,7 +147,8 @@
     flex: 1;
     flex-flow: column wrap;
     margin-bottom: var(--m-med);
-    max-width: 500px;
+    max-width: 900px;
+    min-width: 500px;
   }
 
   main.frontpage article h3 {

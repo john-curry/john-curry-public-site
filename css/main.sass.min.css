@@ -1,0 +1,2 @@
+.goto-top{display:flex;position:fixed;justify-content:center;flex-flow:row nowrap;right:2em;bottom:2em;background-color:rgba(211,211,211,.5);border-radius:4ch;border-color:rgba(111,111,111,.5);border-width:1px;border-style:solid;color:#000;text-decoration:none;width:8ch;height:8ch}.goto-top:hover{border-color:#ff8c00;cursor:pointer;color:#ff8c00}.goto-top:visited{color:#000}.goto-top:focus{color:#000}.goto-top:before{display:block;content:"<<<";margin:auto 0;font-size:large;font-family:monospace;transform:scaleX(2) rotate(90deg)}
+/*# sourceMappingURL=main.sass.min.css.map */

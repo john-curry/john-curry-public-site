@@ -1,25 +1,23 @@
-header {
+@use 'include/mixins/flex' {}header {
   position: sticky;
   position: -webkit-sticky;
   top: 0;
-  z-index: 100;
+  z-index: 101;
 }
 
 header nav {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  display: block;
   background: black;
 }
+
 header nav a {
   display: block;
   font-weight: 300;
   color: white;
   padding: 0px 1rem;
+  text-decoration: underline;
 }
+
 @media (min-width: 768px) {
   header nav a {
     padding: var(--p-big);
