@@ -44,19 +44,19 @@ $image-height: 4912px
                 $n: 10
                 $step: 1
                 $amplitude: 1
-                @for $i from 0 through $n/$step
-                    $hue: $i*$step/$n * 360deg
+                //@for $i from 0 through $n/$step
+                //    $hue: $i*$step/$n * 360deg
 
-                    $offset: $amplitude*math.cos($hue)
-                    $offset-to: $amplitude*math.cos($hue + 120)
+                //    $offset: $amplitude*math.cos($hue)
+                //    $offset-to: $amplitude*math.cos($hue + 120)
 
-                    $width: ($i+1)*$step/$n 
-                    $height: $offset*($i*$step/$n)
+                //    $width: ($i+1)*$step/$n 
+                //    $height: $offset*($i*$step/$n)
 
-                    $hsl: hsla($hue + 200deg, $sat, $light, 1)
-                    $all: append($all, $width+em $height+em 0px $hsl, $separator: comma)
+                //    $hsl: hsla($hue + 200deg, $sat, $light, 1)
+                //    $all: append($all, $width+em $height+em 0px $hsl, $separator: comma)
 
-                animation: 2s ease-in both osc
+                //animation: 2s ease-in both osc
 
                 @keyframes osc
                     0%
