@@ -5,7 +5,7 @@ const Sections = {
         'name': 'Electrical Engineering',
         'location': 'University of Victoria',
         'endline': '',
-        'text': 'I have always been interested in all things computer related. Since forever I have gawked at the circuit boards in near every device that I found interested and yearned to understand how these devices functioned. Having an educational background in Electrical Engineering means that grounded understanding at all levels of technology - From low level signals to high level computer graphics.',
+        'text': 'I have always been interested in all things computer related. Since forever I have gawked at the circuit boards in near every device and yearned to understand how these devices functioned. Having an educational background in Electrical Engineering means having a grounded understanding at all levels of technology - From low level signals to high level computer graphics.',
     },
     'experience': {
         'short': 'Design',
