@@ -3,24 +3,33 @@
   position: -webkit-sticky;
   top: 0;
   z-index: 101;
+  height: 4em;
 }
 
 header nav {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background: black;
+  height: 4em;
 }
 
 header nav a {
   display: block;
+  margin: auto 1em;
   font-weight: 300;
   color: white;
-  padding: 0px 1rem;
   text-decoration: underline;
 }
 
-@media (min-width: 768px) {
-  header nav a {
-    padding: var(--p-big);
-  }
+header nav a:hover {
+  color: blue;
+  cursor: pointer;
 }
 /*# sourceMappingURL=nav.css.map */

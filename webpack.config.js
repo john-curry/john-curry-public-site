@@ -5,9 +5,8 @@ module.exports = {
     entry: path.join(__dirname, "src", "index.js"),
     output: { path: path.join(__dirname, "build"), filename: "index.bundle.js" },
     mode: process.env.NODE_ENV || "development",
-    resolve: { modules: [path.resolve(__dirname, "src"), "node_modules"] },
+    resolve: { modules: [path.resolve(__dirname, "css"),path.resolve(__dirname, "src"), "node_modules"] },
     devServer: { contentBase: __dirname },
-    watch: true,
     watchOptions: {
         ignored: /node_modules/,
     },
@@ -19,12 +18,9 @@ module.exports = {
                 use: ["babel-loader"] 
             },
             {
-                test: /\.(css|scss)$/,
-                use: ["style-loader", "css-loader"],
-            },
-            { 
-                test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
-                use: ["file-loader"] 
+                test: /\.(css|sass|scss)$/,
+                exclude: /node_modules/, 
+                use: ["style-loader", "css-loader", "sass-loader"],
             },
         ],
     },

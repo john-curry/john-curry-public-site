@@ -69,10 +69,6 @@
     font-size: var(--nav-size);
   }
 
-  footer {
-    background-color: var(--color-footer);
-  }
-
   body nav ul {
     display: flex;
     background: black;
@@ -81,7 +77,7 @@
   body main nav li {
     display: block;
     margin: auto;
-    padding: var(--p-small);
+    padding: var(--p-med);
   }
 
 
@@ -148,7 +144,7 @@
     flex-flow: column wrap;
     margin-bottom: var(--m-med);
     max-width: 900px;
-    min-width: 500px;
+    min-width: 375px;
   }
 
   main.frontpage article h3 {
@@ -165,7 +161,7 @@
     background-color: white;
   }
 
-  header aside quote {
+  header aside .quote {
     font-style: italic;
     margin-top: var(--m-small);
     padding: var(--p-small);
@@ -185,20 +181,27 @@
 
   article.frontpage section[data-role=card] {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row-reverse nowrap;
     justify-content: center;
-    min-width: 300px;
     background-color: var(--color-lead);
+    padding-top: 4em;
   }
-
+  @media (orientation: portrait) {
+    article.frontpage section[data-role=card] {
+      justify-content: flex-start;
+    }
+  }
   article.frontpage section div[role=presentation] {
     display: flex;
     flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
     flex: 1;
+    padding: 1em;
   }
 
-  article.frontpage section div[role=img] {
-    font-size: 500%;
+  article.frontpage section div [role=img] {
+    font-size: 220%;
   }
 
   article.frontpage section div[role=presentation] p {
@@ -206,28 +209,27 @@
   }
 
   article.frontpage section div[role=presentation] h4 {
-    font-size: var(--heading-size);
+    font-size: 2em;
+    padding-bottom: 2em;
   }
 
-  article.frontpage section div[role=presentation] quote {
+  article.frontpage section div[role=presentation] .quote {
     display: block;
     font-style: italic;
-    padding-bottom: var(--p-small);
+    padding-bottom: 2.5em;
   }
 
   article.frontpage section div[role=presentation] [role=button] {
     margin: 0 auto;
     padding: var(--p-small) var(--p-big);
-    border: 1px solid white;
-    border-radius: 5px;
-    background-color: darkorange;
+    background-color: none;
+    border: 0;
+    color: blue;
   }
 
   article.frontpage section div[role=presentation] [role=button]:hover {
-    border-color: darkred;
-    color: white;
+    text-decoration: underline;
   }
   article.frontpage section div[role=presentation] [role=button]:active {
-    background-color: darkred;
-    color: white;
+    text-decoration: underline;
   }

@@ -5,7 +5,7 @@ function setHash(hash) {
     console.log(hash)
 }
 
-(function() {
+var notused = function() {
     document.querySelectorAll(".showcase [data-showcase]").forEach((nav) => {
         nav.addEventListener('click', function() {
             setHash(nav.dataset.showcase)
@@ -24,4 +24,4 @@ function setHash(hash) {
             document.getElementById("showcase-"+ card.id).scrollIntoView()
         })
     })
-})()
+}

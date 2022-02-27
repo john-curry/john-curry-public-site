@@ -1,49 +1,137 @@
-const Sections = {
-    'education': {
-        'short': 'Introduction',
-        'header': 'Education',
-        'name': 'Electrical Engineering',
-        'location': 'University of Victoria',
-        'endline': '',
-        'text': 'I have always been interested in all things computer related. Since forever I have gawked at the circuit boards in near every device and yearned to understand how these devices functioned. Having an educational background in Electrical Engineering means having a grounded understanding at all levels of technology - From low level signals to high level computer graphics.',
-    },
-    'experience': {
-        'short': 'Design',
-        'header': 'Experience',
-        'name': 'Software Software Development',
-        'location': 'Professional Experience',
-        'endline': '',
-        'extra': [ { } ],
-        'text':' One of my strengths is my ability to learn new ideas and technologies and be able to quickly take what I have learned and apply them in a productive manner. When it comes to Application Development, no technological requirement is too niche.', 
-    },
-    'design': {
-        'short': 'Web Design',
-        'header': 'Web Design',
-        'name': 'Interactive Web Application Design',
-        'location': 'Custom Solutions To Meet Your Needs',
-        'endline': '',
-        'extra': [ { } ],
-        'text': 'I have a passion for building interactive web applications. Building web interfaces that are user friendly helps brings the productivity and time saving gains that defines the technical revolution we are in to your web browser.',
-    },
-    'custom': {
-        'header': 'Application Development',
-        'short': 'Solutions',
-        'name': 'Custom Solutions For Your Specific Needs',
-        'location': 'Based in Beautiful British Columbia. ',
-        //'endline': 'A Personalized Application to Suite Your Needs',
-        'extra': [ { } ],
-        'text': 'Automate repetitive, time consuming tasks. Free yourself and streamline your workflow. Time is money and your time is valuable. You are worth every second.',
-    },
-    'explore': {
-        'short': 'Explore Projects',
-        'header': 'Explore',
-        'name': 'Start The Future Now',
-        'tagline': 'Contact Information Coming Soon',
-        //'location': 'Products',
-        'endline': '',
-        'extra': [ { 'element': 'input', 'type': 'button', 'text': 'See More'} ],
-        //'text': 'Don\'t lose one more second. We are just getting started. ',
-    }
+import React, { useState, useEffect, useRef, useLayoutEffect } from 'react'
+import ReactDOM from 'react-dom'
+import Sections from './frontpage.content.js'
+import Dialog from "elements/dialog.js"
+
+const onSubmit = (e, data) => {
+    e.preventDefault && e.preventDefault()
+    alert("Uh-oh! This function hasn't been implemented yet. Thanks for trying!")
+    return false
 }
 
-export default Sections
+const FrontPage = () => {
+    const [dialog, setDialog] = useState(false)
+    return (
+        <main className="frontpage">
+            <SectionNav sections={FrontSections}/>
+            <article className="frontpage">
+                <LeadIn setDialog={setDialog} />
+                {
+                    Object.entries(Sections).map(([name, section]) => {
+                        return (
+                            <Section key={name} name={name} data={section}
+                                showDialog={setDialog}
+                            />
+                        )
+                    })
+                }
+            </article>
+            <Dialog open={dialog} onSubmit={onSubmit} setDialog={setDialog} />
+        </main>
+        
+    )
+}
+
+const FrontSections = Object.entries(Sections).map(([key, val]) => {
+    return {
+        'key': key, 'href': key, ...val,
+    }
+})
+
+const SectionHeader = (props) => {
+            return (
+                <h3 data-title={props.header} className="frontpage article"></h3>
+            )
+}
+
+const Section = (props) => {
+    const linkClick = (e) => {
+        props.showDialog(true)
+    }
+    return (
+        <section 
+                className={"about article-section section-" + props.name} 
+                id={props.name} 
+                data-section={props.name}
+            >
+            {props.header ? (<SectionHeader header={props.header} />) : ''}
+            {
+                Object.entries(props.data)
+                .filter(([key,val]) => key !== 'short' && val !== '')
+                .map(([key, val]) => {
+                    return (
+                        <p 
+                            onClick={
+                                (key === 'link' ? linkClick : undefined)
+                            }
+                            key={key} 
+                            data-name={props.name} 
+                            className={'section-'+ key}>
+                            {Array.isArray(val) ? '' : val}
+                        </p>
+                    )
+                })
+            }
+        </section>
+    )
+}
+const SectionNavItem = (props) => {
+    return (
+        <li className={"nav-list-item nav item list listitem-"+ props.href}> 
+            <a data-contents={props.short} href={`#${props.href}`}>
+            </a>
+        </li>
+    )
+}
+
+const SectionNav = (props) => {
+    return (
+        <nav className="main nav">
+            <ul className="nav list">
+            {
+                props.sections.map((section) => (
+                    <SectionNavItem key={section.name} {...section} />
+                ))
+            }
+            </ul>
+        </nav>
+    )
+}
+
+const LeadIn = (props) => {
+    const [offset, setOffset] = useState(0);
+
+    const ref = useRef(window.pageYoffset)
+
+    useEffect(() => {
+        const onScroll = () => {
+            setOffset(ref.current.getBoundingClientRect().top - window.pageYOffset)
+        }
+        // clean up code
+        window.removeEventListener('scroll', onScroll)
+        window.addEventListener('scroll', onScroll, { passive: true })
+        return () => window.removeEventListener('scroll', onScroll)
+    }, [])
+
+    return (
+            <section 
+                ref={ref} 
+                className={"lead" + ((offset < 0) ? " inview" : "")}
+                id="lead" 
+                data-role="card"
+                >
+                <div role="presentation">
+                    <h4>Software Development and Web Design</h4>
+                    <div className="quote">Are you looking to build a website?</div>
+                    <div className="quote">Have no idea where to start?</div>
+                    <div className="brews" role="img">👍</div>
+                    <p>Look no further!</p>
+                    <p>Let me, help you with all your application development needs.</p>
+                    <button onClick={() => props.setDialog(true)}role="button" className="card-button">Get Started Now →</button>
+                </div>
+            </section>
+    )
+}
+
+const Span = (props) => (<span {...props}>{props.text}</span>)
+export default FrontPage
