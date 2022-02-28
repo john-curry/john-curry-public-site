@@ -6,6 +6,7 @@ const Dialog = (props) => {
         from: '',
         subject: '',
         content: '',
+        submitted: false,
     })
 
     const dataChanged = (next) => {
@@ -44,8 +45,34 @@ const Dialog = (props) => {
 
     const ref = useRef(null)
     useEffect(() => {
-        return onChange(props.open)
+        //return onChange(props.open)
     })
+
+    const post = () => {
+        return fetch("Contact", { 
+            method: "post", 
+            headers: {
+                //'Content-Type': 'application/x-www-form-urlencoded'
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+    }
+    const onSubmit = (ev, ok) => {
+        ev.preventDefault()
+
+        if (!ok) return
+
+        setData({
+            submitted: true,
+        })
+
+        //post.then((response) => {
+        //    console.log(response)
+        //}).catch((err) => {
+        //    console.log(err)
+        //})
+    }
 
     return (
         <dialog ref={ref}
@@ -53,17 +80,17 @@ const Dialog = (props) => {
             className={styles.dialog}
             open={props.open}
         >
-            <form onSubmit={(e) => props.onSubmit(e, data)}>
-                <h5><p>Contact</p><button onClick={() => onChange(false)}>×</button></h5>
+            <form onSubmit={(ev) => onSubmit(ev)}>
+                <h5><p>Contact</p><button onClick={(ev) => onSubmit(ev, false)}>×</button></h5>
                 <label htmlFor="dialog-from">From:       </label>
-                <input value={data.from} onChange={(e) => dataChanged({ 'from': e.target.value })} id="dialog-from" type="text" name="email" />
+                <input value={data.from || ''} onChange={(e) => dataChanged({ 'from': e.target.value })} id="dialog-from" type="text" name="from" />
                 <label htmlFor="dialog-subject">Subject: </label>
-                <input value={data.subject} onChange={(e) => dataChanged({ 'subject': e.target.value })} id="dialog-subject" type="text" name="subject" />
+                <input value={data.subject || ''} onChange={(e) => dataChanged({ 'subject': e.target.value })} id="dialog-subject" type="text" name="subject" />
                 <label htmlFor="dialog-content">Content: </label>
-                <textarea onChange={(e) => dataChanged({ 'content': e.target.value })} id="dialog-content" name="text" value={data.content}></textarea>
+                <textarea onChange={(e) => dataChanged({ 'content': e.target.value })} id="dialog-content" name="content" value={data.content || ''}></textarea>
                 <menu>
-                    <button onClick={() => onChange(false)} value="cancel">Cancel</button>
-                    <button onClick={() => onChange(false)} value="default">Ok</button>
+                    <button onClick={(ev) => onSubmit(ev, false)} value="cancel">Cancel</button>
+                    <button onClick={(ev) => onSubmit(ev, true)} value="default">Ok</button>
                 </menu>
             </form>
         </dialog>

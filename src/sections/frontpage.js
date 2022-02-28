@@ -26,7 +26,7 @@ const FrontPage = () => {
                     })
                 }
             </article>
-            <Dialog open={dialog} onSubmit={onSubmit} setDialog={setDialog} />
+            <Dialog open={dialog} setDialog={setDialog} />
         </main>
         
     )
