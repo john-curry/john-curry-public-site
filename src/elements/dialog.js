@@ -61,7 +61,10 @@ const Dialog = (props) => {
     const onSubmit = (ev, ok) => {
         ev.preventDefault()
 
-        if (!ok) return props.setDialog(false)
+        if (!ok) {
+            props.setDialog(false)
+            return
+        }
 
         setData({
             submitted: true,
