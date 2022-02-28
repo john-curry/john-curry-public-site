@@ -61,12 +61,13 @@ const Dialog = (props) => {
     const onSubmit = (ev, ok) => {
         ev.preventDefault()
 
-        if (!ok) return
+        if (!ok) return props.setDialog(false)
 
         setData({
             submitted: true,
         })
 
+        props.setDialog(false)
         //post.then((response) => {
         //    console.log(response)
         //}).catch((err) => {
