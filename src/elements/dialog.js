@@ -14,7 +14,8 @@ const Dialog = (props) => {
         }))
     }
 
-    const onChange = (open) => {
+    const onChange = (e, open) => {
+        console.log(e)
         const types = ['scroll', 'touchmove', 'onwheel', 'mousewheel']
         const args = (type) => ((type === 'mousewheel') ? { passive: false } : false)
 
@@ -54,7 +55,7 @@ const Dialog = (props) => {
             open={props.open}
         >
             <form onSubmit={(e) => props.onSubmit(e, data)}>
-                <h5><p>Contact</p><button onClick={() => onChange(false)}>×</button></h5>
+                <h5><p>Contact</p><button onClick={(e) => onChange(e, false)}>×</button></h5>
                 <label htmlFor="dialog-from">From:       </label>
                 <input value={data.from} onChange={(e) => dataChanged({ 'from': e.target.value })} id="dialog-from" type="text" name="email" />
                 <label htmlFor="dialog-subject">Subject: </label>
@@ -62,8 +63,8 @@ const Dialog = (props) => {
                 <label htmlFor="dialog-content">Content: </label>
                 <textarea onChange={(e) => dataChanged({ 'content': e.target.value })} id="dialog-content" name="text" value={data.content}></textarea>
                 <menu>
-                    <button onClick={() => onChange(false)} value="cancel">Cancel</button>
-                    <button onClick={() => onChange(false)} value="default">Ok</button>
+                    <button onClick={(e) => onChange(e, false)} value="cancel">Cancel</button>
+                    <button onClick={(e) => onChange(e, false)} value="default">Ok</button>
                 </menu>
             </form>
         </dialog>

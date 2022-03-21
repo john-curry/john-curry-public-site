@@ -1,2 +1,0 @@
-header{position:sticky;position:-webkit-sticky;top:0;z-index:101;height:4em}header nav{display:flex;justify-content:flex-start;align-items:center;background:#000;height:4em}header nav a{display:block;margin:auto 1em;font-weight:300;color:#fff;text-decoration:underline}header nav a:hover{color:blue;cursor:pointer}
-/*# sourceMappingURL=nav.sass.min.css.map */

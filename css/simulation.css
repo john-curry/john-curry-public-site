@@ -1,0 +1,37 @@
+.ui {
+  width: 100vw;
+  height: auto;
+  margin: auto;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow-x: hudden;
+  background: lightblue;
+}
+
+.user-interface {
+  position: absolute;
+}
+
+.toolbox {
+  top: 0;
+  left: 0;
+}
+
+.settings {
+  top: 0;
+  right: 0;
+}
+
+.console, .menubar {
+  left: 0;
+  right: 0;
+}
+
+.console {
+  bottom: 0;
+}
+
+.menubar {
+  top: 0;
+}
+/*# sourceMappingURL=simulation.css.map */

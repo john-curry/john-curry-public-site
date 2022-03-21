@@ -116,6 +116,10 @@
     flex-direction: column;
   }
 
+  [hidden]:is(header, footer, main) {
+    display:none;
+  }
+
   header aside {
     display: flex;
     flex-direction: column;

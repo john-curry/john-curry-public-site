@@ -1,0 +1,119 @@
+@use "sass:math"
+$element-size: 1em
+
+.sim
+    width: 99vw
+    height: auto
+    aspect-ratio: 16 / 9
+    position: relative
+    background: lightblue
+    overflow-x: hidden
+
+    main.viewport
+        width: 90vw
+        height: auto
+        margin: 0 auto
+        aspect-ratio: 16 / 9
+    
+    & :where(fieldset, input, label, output, textarea, menu, select)
+        display: block
+        padding: 0
+        margin: 0
+        background: unset
+.menu
+    position: relative
+
+    section
+        position: relative
+
+    label
+        display: none
+        position: absolute
+        background-color: lightgray
+        top: 0
+        left: 0
+        right: 0
+
+label.ui-command
+    display: none
+.menu
+    background: white
+
+    section select
+        padding: 0.5em
+        border: 0
+        outline: 0
+
+.settings, .toolbox
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    border: 0
+    outline: 1px solid white
+    background: white
+
+    $size: 2em
+    line-height: 1
+    font-size: 0.8em
+
+    .col:last-child
+        padding-left: 1px
+
+    input, button
+        $border-width: 0.2em
+
+        background-color: white
+
+        border-width: $border-width
+        border-style: solid
+        border-color: white
+        outline: 0
+
+        &:hover
+            cursor: pointer
+            color: black
+            font-weight: bold
+            outline: 1px solid lightgray
+            z-index: 99
+
+
+        &:focus
+            border-color: blue
+
+    input,button
+        width: 2*$size
+        height: 2*$size
+
+
+
+.ui
+    z-index: 1
+
+.ui-bar
+    display: flex
+    flex-flow: row nowrap
+
+.user-interface
+    position: absolute
+
+.ui-bottom
+    bottom: 0
+
+.ui-top
+    top: 0
+
+.ui-right
+    top: 5em
+    right: 2em
+
+.ui-left
+    top: 5em
+    left: 2em
+
+.ui-sticky:where(.ui-top, .ui-bottom)
+    left: 0
+    right: 0
+
+.ui-sticky:where(.ui-left, .ui-right)
+    top: 0
+    bottom: 0

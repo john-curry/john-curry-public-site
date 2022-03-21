@@ -7,6 +7,7 @@ module.exports = {
     mode: process.env.NODE_ENV || "development",
     resolve: { modules: [path.resolve(__dirname, "css"),path.resolve(__dirname, "src"), "node_modules"] },
     devServer: { contentBase: __dirname },
+    devtool: 'source-map',
     watchOptions: {
         ignored: /node_modules/,
     },

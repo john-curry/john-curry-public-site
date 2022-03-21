@@ -50,6 +50,6 @@ const App = (props) => {
 
     return GetApp(page.name, (page.name === "frontpage"), page.page({ set: set }), set)
 }
-
+//fetch("http://34.75.193.60/test.txt")
 const current = GetLastPage() || 'frontpage'
 ReactDOM.render(<App startPage={current} />, document.getElementById("app-container"))
