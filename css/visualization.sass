@@ -1,0 +1,78 @@
+.container-visualization
+    min-height: 100vh
+    main
+        min-height: 100vh
+        width: 100vw
+
+        .graph
+            display: flex
+            flex-flow: column nowrap
+            place-items: center
+            width: 100vw
+            aspect-ratio: 2 / 1
+            height: auto
+            border: 1px solid black
+            padding-bottom: 5vw
+
+            &[data-done=false]:after
+                display: grid
+                place-items: center
+                padding-top: 5vw
+                content: "Coming Soon!"
+                font-size: 3em
+                width: 90vw
+                height: auto
+                aspect-ratio: 3 / 2
+                padding: 5vw
+                margin: 0 auto
+
+            &:before
+                display: block
+                padding-top: 5vw
+                content: attr(data-type)
+                font-size: 3em
+                font-weight: bold
+
+        #viewbox
+            display: block
+            width: 90vw
+            padding: 5vw
+            border: 1px solid lightgray
+            z-index: 0
+
+            rect
+                display: block
+                pointer-events: all
+
+                &:hover
+                    filter: hue-rotate(90deg)
+                    cursor: pointer
+
+        .graphtitle
+            color: black
+            font-size: 3rem
+            font-family: "Source sans Pro", system-ui
+            font-weight: 400
+
+        .graphdesc
+            color: black
+            font-size: 3rem
+            font-family: "Source sans Pro", system-ui
+            font-weight: 200
+
+        .xlabel, .ylabel
+            color: black
+            font-size: 3rem
+            font-family: "Source sans Pro", system-ui
+            font-weight: 400
+        .ylabel
+            font-size: 2rem
+            transform: translate(80px, 10px)
+            font-weight: 200
+        .label
+            color: black
+            font-size: 3rem
+            font-family: "Source sans Pro", system-ui
+            font-weight: 500
+
+        
