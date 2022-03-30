@@ -1,7 +1,0 @@
-.min
-.map
-node_modules
-build
-build/*
-*.map
-*.min.css
